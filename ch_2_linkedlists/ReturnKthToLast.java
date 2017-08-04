@@ -21,20 +21,12 @@ public class ReturnKthToLast {
 		
 		//print out list and retrieve the kth to last
 		System.out.print("Retrieving 3rd to last of list: ");
-		LinkedListNode runner = head;
-		while(runner != null){
-			if(runner != head)
-				System.out.print(", ");
-			System.out.print(runner.data);
-			runner = runner.next;
-			
-		}
-		System.out.println("");
+		printLinkedList(head);
 		System.out.println(returnKthToLast(head,3).data);
 		
 	}
 	/* Inputs: head node and an index of which node to returned (starts from end and moves backwards)
-	 * Ouputs: returns the kth to last node in the linked list
+	 * Outputs: returns the kth to last node in the linked list
 	 * Methods: Two runners are set n-1 nodes apart until the front runner reaches the end. The back runner is returned.
 	 * */
 	public static LinkedListNode returnKthToLast(LinkedListNode head, int k){
@@ -62,7 +54,7 @@ public class ReturnKthToLast {
 		
 	}
 	/* Inputs: array of strings
-	 * Ouputs: returns head of newly created linked list
+	 * Outputs: returns head of newly created linked list
 	 * */
 	public static LinkedListNode populateLinkedList(String[] myData){
 		if(myData.length == 0)
@@ -79,6 +71,21 @@ public class ReturnKthToLast {
 		}
 		
 		return head;
+	}
+	
+	/* Inputs: head node of a linked list
+	 * Outputs: prints out comma separated list of node values
+	 * */
+	public static void printLinkedList(LinkedListNode head){
+		LinkedListNode runner = head;
+		while(runner != null){
+			if(runner != head)
+				System.out.print(", ");
+			System.out.print(runner.data);
+			runner = runner.next;
+			
+		}
+		System.out.println("");
 	}
 
 }
